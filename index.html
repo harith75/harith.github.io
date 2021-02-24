@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+ <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Only Smart </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>  
+<header> 
+<nav> 
+    <ul>
+        <li id="logo"><a href="#">Only Smart</a></li>
+        <li><a href="#acceuil">Qui sommes nous ?</a></li>
+        <li><a href="#vehicules">Nos Véhicules</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul> 
+</nav>
+<div id="imageprincipale">
+    <h1 id="acceuil">Only Smart</h1>
+    <div id='premiertrait'></div>
+
+</header>
+<section id="presentation">
+    <div id="textintro">
+    <h2 id="vehicules">Qui sommes nous ? </h2> 
+    <p>
+        Only Smart est une société de location de voiture créé par deux frères. <br> <br> Notre objectif est d'offrir des véhicules en parfait état. Nous nous engageons à trouver la meilleure solution pour vous en fonction de vos besoins.
+        <br><br> Nous vous proposons la location de voitures de type Smart sur Paris et sa banlieue.
+        <br>Un service de livraison à domicile est également disponible.  
+    </div>
+
+    </p>   
+    </div>
+    <div id="nosvoitures">
+        <div class="imagevoitures">
+        <h4>Smart ForTow</h4>
+        <a><img src="media/smartfortowgood.png" alt="smart2"></a>
+        </div>
+            <div class="imagevoitures">
+            <h4>Smart ForFour</h4>
+            <a><img src="media/smartforfourgood.png" alt="smart2"></a>
+            </div>
+    </div>
+    
+</section>
+<footer>
+<h2 id="contact">Contactez-nous</h2>
+<form>
+    <input placeholder="Nom">
+    <input placeholder="E-mail">
+    <textarea placeholder="Votre message ici ..."></textarea>
+    <button>Envoyer</button>
+</form>
+<php>
+if(isset($_POST['message'])){
+    $entete  = 'MIME-Version: 1.0' . "\r\n";
+    $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+    $entete .= 'From: ' . $_POST['email'] . "\r\n";
+
+    $message = '<h1>Message envoyé depuis la page Contact de monsite.fr</h1>
+    <p><b>Nom : </b>' . $_POST['nom'] . '<br>
+    <b>Email : </b>' . $_POST['email'] . '<br>
+    <b>Message : </b>' . $_POST['message'] . '</p>';
+
+    $retour = mail('harith.tym@hotmail.fr', 'Envoi depuis page Contact', $message, $entete);
+    if($retour) {
+        echo '<p>Votre message a bien été envoyé.</p>';
+    }
+}
+</php>
+<div id="deuxiemetrait"></div>
+<div id="copyrighteticons">
+ <div id="copyright">
+     <span>© SAS Only Smart</span></div>
+     <div id="icons">
+         <a href="https://www.snapchat.com/add/onlysmart75"><i class="fa fa-snapchat"></i></a>
+         <a href="https://wa.me/message/ZJRQIONP5UG7B1"><i class="fa fa-whatsapp"></i></a>
+         <a href="https://wa.me/message/ZJRQIONP5UG7B1"><i class="fa fa-instagram"></i></a>
+
+     
+    </div>
+ </div>
+</footer>
+
+
+     </body>
+ </html>
